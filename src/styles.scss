@@ -1,0 +1,25 @@
+@import '@fontsource/allerta-stencil';
+@import "@fortawesome/fontawesome-free/css/fontawesome.css";
+@import "@fortawesome/fontawesome-free/css/solid.css";
+
+:root {
+  --qt-body-bg: #d7d5cb;
+  --qt-clock-bg: #0e0e10;
+  --qt-lang-selector-color: var(--qt-clock-bg);
+  --qt-display-color: white;
+  --qt-inactive-opacity: 0.25;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--qt-body-bg);
+  font-family: 'Allerta Stencil', serif;
+}
+
+button {
+  font-family: 'Allerta Stencil', serif;
+}
