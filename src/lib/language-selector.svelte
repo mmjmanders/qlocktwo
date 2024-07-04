@@ -26,9 +26,9 @@
 	.language-selector {
 		display: flex;
 		gap: 8px;
+		color: var(--qt-lang-selector-color);
 
 		.language {
-			color: var(--qt-lang-selector-color);
 			opacity: var(--qt-inactive-opacity);
 			text-transform: uppercase;
 			cursor: pointer;
