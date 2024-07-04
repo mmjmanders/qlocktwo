@@ -12,13 +12,15 @@
 </script>
 
 <div class="clock">
-	{#each letters as letter, i}
-		<Letter
-			{letter}
-			isOn={config.isHourOn(i, date.getHours(), date.getMinutes(), config.hours) ||
-				config.isMinuteOn(i, date.getMinutes(), config.minutes)}
-		/>
-	{/each}
+	<div class="container">
+		{#each letters as letter, i}
+			<Letter
+				{letter}
+				isOn={config.isHourOn(i, date.getHours(), date.getMinutes(), config.hours) ||
+					config.isMinuteOn(i, date.getMinutes(), config.minutes)}
+			/>
+		{/each}
+	</div>
 	{#each dots as _, i}
 		<Dot isOn={i < date.getMinutes() % 5} index={i} />
 	{/each}
@@ -26,12 +28,29 @@
 
 <style lang="scss">
 	.clock {
+		aspect-ratio: 1/1;
 		position: relative;
 		display: flex;
 		background-color: var(--qt-clock-bg);
-		width: 770px;
-		height: 770px;
-		padding: 55px;
-		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+
+		@media screen and (orientation: landscape) {
+			width: 100vh;
+			height: 100vh;
+		}
+
+		@media screen and (orientation: portrait) {
+			width: 100vw;
+			height: 100vw;
+		}
+
+		.container {
+			display: grid;
+			grid-template-columns: repeat(11, 1fr);
+			grid-template-rows: repeat(10, 1fr);
+			width: 90%;
+			height: 90%;
+		}
 	}
 </style>

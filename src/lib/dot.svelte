@@ -11,10 +11,18 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 60px;
-		height: 60px;
+		width: 4.8vh;
+		height: 4.8vh;
 		color: var(--qt-display-color);
 		opacity: var(--qt-inactive-opacity);
+
+		@media screen and (orientation: landscape) {
+			font-size: 2.4vh;
+		}
+
+		@media screen and (orientation: portrait) {
+			font-size: 2.4vw;
+		}
 
 		&.active {
 			opacity: 1;

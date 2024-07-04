@@ -6,7 +6,7 @@
 	export let interval: number;
 	export let data: PageData;
 	export let date = new Date();
-	export let language: Language = Language.nl;
+	export let language: Language = Language.en;
 
 	onMount(() => {
 		interval = setInterval(() => {
