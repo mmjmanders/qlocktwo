@@ -1,8 +1,8 @@
-import { beforeEach, describe, it, expect, vi } from 'vitest';
-import { render, screen, type RenderResult } from '@testing-library/svelte';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { render, type RenderResult } from '@testing-library/svelte';
 import { default as Clock } from '../lib/clock.svelte';
 
-describe('Clock', () => {
+describe('clock', () => {
 	let component: RenderResult<Clock>;
 
 	beforeEach(() => {
