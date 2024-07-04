@@ -22,7 +22,7 @@ describe('language-selector', () => {
 	});
 
 	it('should have a number of buttons equal to the number of languages', () => {
-		const buttons = component.container.getElementsByTagName('button');
-		expect(buttons.length).toBe(Object.keys(Language).length);
+		const divs = component.container.getElementsByClassName('language');
+		expect(divs.length).toBe(Object.keys(Language).length);
 	});
 });

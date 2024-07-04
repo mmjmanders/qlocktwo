@@ -8,14 +8,13 @@
 
 <div class="language-selector">
 	{#each languages as lang, i}
-		<button
-			type="button"
+		<div
 			class="language"
 			class:active={lang === language}
 			on:click={() => (language = Language[lang])}
 		>
 			{lang}
-		</button>
+		</div>
 		{#if i < languages.length - 1}
 			<span>|</span>
 		{/if}
