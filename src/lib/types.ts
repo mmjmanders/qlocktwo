@@ -3,19 +3,25 @@ export enum Language {
 	nl = 'nl'
 }
 
-export type ConfigPerLanguage = {
+export abstract class Config {
 	clock: string;
-	isHourOn: (
-		index: number,
-		hours: number,
-		minutes: number,
-		config: { [key: number]: number[] }
-	) => boolean;
-	isMinuteOn: (index: number, minutes: number, config: { [key: number]: number[] }) => boolean;
-	hours: { [key: number]: number[] };
-	minutes: { [key: number]: number[] };
-};
+	protected hours: { [key: number]: number[] };
+	protected minutes: { [key: number]: number[] };
 
-export type Config = {
-	[key in Language]: ConfigPerLanguage;
+	constructor(
+		clock: string,
+		hours: { [key: number]: number[] },
+		minutes: { [key: number]: number[] }
+	) {
+		this.clock = clock;
+		this.hours = hours;
+		this.minutes = minutes;
+	}
+
+	abstract isHourOn(index: number, hours: number, minutes: number): boolean;
+	abstract isMinuteOn(index: number, minutes: number): boolean;
+}
+
+export type ClockConfig = {
+	[key in Language]: Config;
 };

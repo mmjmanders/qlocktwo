@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`config > should have isHourOn "false", for index 73, hours 5 and minutes 55 1`] = `false`;
+
+exports[`config > should have isHourOn "false", for index 79, hours 8 and minutes 40 1`] = `false`;
+
+exports[`config > should have isHourOn "false", for index 93, hours +0 and minutes 35 1`] = `false`;
+
+exports[`config > should have isHourOn "false", for index 99, hours 10 and minutes 35 1`] = `false`;
+
+exports[`config > should have isHourOn "true", for index 55, hours +0 and minutes 35 1`] = `true`;
+
+exports[`config > should have isHourOn "true", for index 73, hours 5 and minutes 10 1`] = `true`;
+
+exports[`config > should have isHourOn "true", for index 79, hours 8 and minutes 10 1`] = `true`;
+
+exports[`config > should have isHourOn "true", for index 93, hours +0 and minutes +0 1`] = `true`;
+
+exports[`config > should have isHourOn "true", for index 99, hours 10 and minutes 30 1`] = `true`;
+
+exports[`config > should have isMinuteOn "false", for index 3 and minutes 7 1`] = `false`;
+
+exports[`config > should have isMinuteOn "false", for index 19 and minutes 21 1`] = `false`;
+
+exports[`config > should have isMinuteOn "false", for index 31 and minutes 30 1`] = `false`;
+
+exports[`config > should have isMinuteOn "true", for index 3 and minutes +0 1`] = `true`;
+
+exports[`config > should have isMinuteOn "true", for index 15 and minutes 45 1`] = `true`;
+
+exports[`config > should have isMinuteOn "true", for index 15 and minutes 47 1`] = `true`;
+
+exports[`config > should have isMinuteOn "true", for index 19 and minutes 16 1`] = `true`;
+
+exports[`config > should have isMinuteOn "true", for index 19 and minutes 19 1`] = `true`;
+
+exports[`config > should have isMinuteOn "true", for index 31 and minutes 28 1`] = `true`;
+
+exports[`config > should have isMinuteOn "true", for index 31 and minutes 29 1`] = `true`;

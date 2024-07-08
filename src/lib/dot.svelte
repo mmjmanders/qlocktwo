@@ -14,14 +14,15 @@
 		width: 4.8vh;
 		height: 4.8vh;
 		color: var(--qt-display-color);
+		text-shadow: var(--qt-display-text-shadow);
 		opacity: var(--qt-inactive-opacity);
 
 		@media screen and (orientation: landscape) {
-			font-size: 2.4vh;
+			font-size: 1.5vh;
 		}
 
 		@media screen and (orientation: portrait) {
-			font-size: 2.4vw;
+			font-size: 2vw;
 		}
 
 		&.active {

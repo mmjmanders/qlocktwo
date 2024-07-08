@@ -1,22 +1,23 @@
 import type { PageLoad } from './$types';
-import type { Config } from '$lib';
+import { type ClockConfig, Config } from '$lib';
 
 export const load: PageLoad = () => ({
 	config: {
-		en: {
-			clock:
-				'itlisasampmacquarterdctwentyfivexhalfstenftopasterunineonesixthreefourfivetwoeightelevenseventwelvetenseoclock',
-			isHourOn: (index, hours, minutes, config) => {
+		en: new (class extends Config {
+			isHourOn(index: number, hours: number, minutes: number): boolean {
 				const displayHour = ((minutes < 35 ? hours : hours + 1) + 12) % 12;
-				const display = config[displayHour];
+				const display = this.hours[displayHour];
 				return display.includes(index);
-			},
-			isMinuteOn: (index, minutes, config) => {
+			}
+
+			isMinuteOn(index: number, minutes: number): boolean {
 				const displayMinute = minutes - (minutes % 5);
-				const display = config[displayMinute];
+				const display = this.minutes[displayMinute];
 				return display.includes(index);
-			},
-			hours: {
+			}
+		})(
+			'itlisasampmacquarterdctwentyfivexhalfstenftopasterunineonesixthreefourfivetwoeightelevenseventwelvetenseoclock',
+			{
 				0: [93, 94, 95, 96, 97, 98],
 				1: [55, 56, 57],
 				2: [74, 75, 76],
@@ -30,7 +31,7 @@ export const load: PageLoad = () => ({
 				10: [99, 100, 101],
 				11: [82, 83, 84, 85, 86, 87]
 			},
-			minutes: {
+			{
 				0: [0, 1, 3, 4, 104, 105, 106, 107, 108, 109],
 				5: [28, 29, 30, 31, 44, 45, 46, 47],
 				10: [38, 39, 40, 44, 45, 46, 47],
@@ -42,23 +43,24 @@ export const load: PageLoad = () => ({
 				40: [22, 23, 24, 25, 26, 27, 42, 43],
 				45: [11, 13, 14, 15, 16, 17, 18, 19, 42, 43],
 				50: [38, 39, 40, 42, 43],
-				55: [0, 1, 3, 4, 42, 43]
+				55: [28, 29, 30, 31, 42, 43]
 			}
-		},
-		nl: {
-			clock:
-				'hetkisavijftienatzvoorovermekwarthalfspmovervoorthgeenstweeamcdrieviervijfzeszevenonegenachttienelftwaalfpmuur',
-			isHourOn: (index, hours, minutes, config) => {
+		),
+		nl: new (class extends Config {
+			isHourOn(index: number, hours: number, minutes: number): boolean {
 				const displayHour = ((minutes < 20 ? hours : hours + 1) + 12) % 12;
-				const display = config[displayHour];
+				const display = this.hours[displayHour];
 				return display.includes(index);
-			},
-			isMinuteOn: (index, minutes, config) => {
+			}
+
+			isMinuteOn(index: number, minutes: number): boolean {
 				const displayMinute = minutes - (minutes % 5);
-				const display = config[displayMinute];
+				const display = this.minutes[displayMinute];
 				return display.includes(index);
-			},
-			hours: {
+			}
+		})(
+			'hetkisavijftienatzvoorovermekwarthalfspmovervoorthgeenstweeamcdrieviervijfzeszevenonegenachttienelftwaalfpmuur',
+			{
 				0: [99, 100, 101, 102, 103, 104],
 				1: [51, 52, 53],
 				2: [55, 56, 57, 58],
@@ -72,7 +74,7 @@ export const load: PageLoad = () => ({
 				10: [92, 93, 94, 95],
 				11: [96, 97, 98]
 			},
-			minutes: {
+			{
 				0: [0, 1, 2, 4, 5, 107, 108, 109],
 				5: [7, 8, 9, 10, 40, 41, 42, 43],
 				10: [11, 12, 13, 14, 40, 41, 42, 43],
@@ -86,8 +88,8 @@ export const load: PageLoad = () => ({
 				50: [11, 12, 13, 14, 44, 45, 46, 47],
 				55: [7, 8, 9, 10, 44, 45, 46, 47]
 			}
-		}
-	} as Config
+		)
+	} as ClockConfig
 });
 
 export const ssr = false;
