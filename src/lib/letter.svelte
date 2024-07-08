@@ -14,6 +14,7 @@
 		align-items: center;
 		text-transform: uppercase;
 		color: var(--qt-display-color);
+		text-shadow: var(--qt-display-text-shadow);
 		opacity: var(--qt-inactive-opacity);
 
 		@media screen and (orientation: landscape) {
