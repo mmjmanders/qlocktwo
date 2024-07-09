@@ -8,6 +8,7 @@
 
 <div class="language-selector">
 	{#each languages as lang, i}
+		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 		<div
 			class="language"
 			class:active={lang === language}
