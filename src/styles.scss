@@ -1,24 +1,27 @@
-$fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts" !default;
+$fa-font-path: '../node_modules/@fortawesome/fontawesome-free/webfonts' !default;
 
 @import '@fontsource/allerta-stencil';
-@import "@fortawesome/fontawesome-free/scss/fontawesome";
-@import "@fortawesome/fontawesome-free/scss/solid";
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
 
 :root {
-  --qt-body-bg: #d7d5cb;
-  --qt-clock-bg: #0e0e10;
-  --qt-lang-selector-color: var(--qt-clock-bg);
-  --qt-display-color: white;
-  --qt-inactive-opacity: 0.25;
-  --qt-display-text-shadow: 0 0 10px rgba(255,255,255,0.7), 0 0 20px rgba(255,255,255,0.7), 0 0 30px rgba(255,255,255,0.7), 0 0 40px rgba(255,255,255,0.7);
+	--qt-body-bg: #d7d5cb;
+	--qt-clock-bg: #0e0e10;
+	--qt-lang-selector-color: var(--qt-clock-bg);
+	--qt-display-color: white;
+	--qt-inactive-opacity: 0.25;
+	--qt-display-text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.7),
+		0 0 30px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.7);
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background-color: var(--qt-body-bg);
-  font-family: 'Allerta Stencil', serif;
+	margin: 0;
+	background-color: var(--qt-body-bg);
+	font-family: 'Allerta Stencil', serif;
 }

@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { render, type RenderResult } from '@testing-library/svelte';
 import { default as Clock } from '../lib/clock.svelte';
 import { Config } from '$lib';
