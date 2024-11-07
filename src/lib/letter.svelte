@@ -1,6 +1,10 @@
 <script lang="ts">
-	export let letter: string;
-	export let isOn: boolean;
+	interface Props {
+		letter: string;
+		isOn: boolean;
+	}
+
+	let { letter, isOn }: Props = $props();
 </script>
 
 <div class="letter" class:active={isOn}>

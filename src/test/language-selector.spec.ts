@@ -4,7 +4,7 @@ import { render, type RenderResult } from '@testing-library/svelte';
 import { Language } from '$lib';
 
 describe('language-selector', () => {
-	let component: RenderResult<LanguageSelector>;
+	let component: RenderResult<typeof LanguageSelector>;
 
 	beforeEach(() => {
 		component = render(LanguageSelector, {

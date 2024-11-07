@@ -1,18 +1,22 @@
 <script lang="ts">
 	import { Language } from '$lib';
 
-	export let language: Language;
+	interface Props {
+		language: Language;
+	}
 
-	$: languages = Object.values(Language);
+	let { language = $bindable() }: Props = $props();
+
+	let languages = $derived(Object.values(Language));
 </script>
 
 <div class="language-selector">
 	{#each languages as lang, i}
-		<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 		<div
 			class="language"
 			class:active={lang === language}
-			on:click={() => (language = Language[lang])}
+			onclick={() => (language = Language[lang])}
 		>
 			{lang}
 		</div>

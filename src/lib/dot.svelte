@@ -1,9 +1,13 @@
 <script lang="ts">
-	export let index: number;
-	export let isOn: boolean;
+	interface Props {
+		index: number;
+		isOn: boolean;
+	}
+
+	let { index, isOn }: Props = $props();
 </script>
 
-<div class="dot dot-{index} fa-solid fa-circle" class:active={isOn} />
+<div class="dot dot-{index} fa-solid fa-circle" class:active={isOn}></div>
 
 <style lang="scss">
 	.dot {
