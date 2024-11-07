@@ -4,7 +4,7 @@ import { default as Clock } from '../lib/clock.svelte';
 import { Config } from '$lib';
 
 describe('clock', () => {
-	let component: RenderResult<Clock>;
+	let component: RenderResult<typeof Clock>;
 
 	beforeEach(() => {
 		component = render(Clock, {

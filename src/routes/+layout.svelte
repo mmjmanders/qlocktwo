@@ -1,9 +1,14 @@
 <script lang="ts">
 	import '../styles.scss';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 </script>
 
 <main class="clock-container">
-	<slot />
+	{@render children?.()}
 </main>
 
 <style lang="scss">

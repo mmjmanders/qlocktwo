@@ -3,10 +3,19 @@
 	import { onDestroy, onMount } from 'svelte';
 	import { Clock, Language, LanguageSelector } from '$lib';
 
-	export let interval: number;
-	export let data: PageData;
-	export let date = new Date();
-	export let language: Language = Language.en;
+	interface Props {
+		interval: number;
+		data: PageData;
+		date?: Date;
+		language?: Language;
+	}
+
+	let {
+		interval = $bindable(),
+		data,
+		date = $bindable(new Date()),
+		language = $bindable(Language.en)
+	}: Props = $props();
 
 	onMount(() => {
 		interval = setInterval(() => {

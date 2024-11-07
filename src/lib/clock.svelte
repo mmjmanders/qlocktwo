@@ -3,12 +3,16 @@
 	import { default as Dot } from './dot.svelte';
 	import { Config } from '$lib';
 
-	export let date: Date;
-	export let config: Config;
+	interface Props {
+		date: Date;
+		config: Config;
+	}
+
+	let { date, config }: Props = $props();
 
 	export const dots = Array(4);
 
-	$: letters = config.clock.split('');
+	let letters = $derived(config.clock.split(''));
 </script>
 
 <div class="clock">
@@ -28,7 +32,6 @@
 
 <style lang="scss">
 	.clock {
-		aspect-ratio: 1/1;
 		position: relative;
 		display: flex;
 		background-color: var(--qt-clock-bg);
