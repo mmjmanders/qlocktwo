@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { default as Letter } from './letter.svelte';
 	import { default as Dot } from './dot.svelte';
-	import { Config } from '$lib';
+	import { Config, Language } from '$lib';
 
 	interface Props {
 		date: Date;
 		config: Config;
+		language: keyof typeof Language;
 	}
 
-	let { date, config }: Props = $props();
+	let { date, config, language }: Props = $props();
 
 	export const dots = Array(4);
 
@@ -20,6 +21,8 @@
 		{#each letters as letter, i}
 			<Letter
 				{letter}
+				{language}
+				index={i}
 				isOn={config.isHourOn(i, date.getHours(), date.getMinutes()) ||
 					config.isMinuteOn(i, date.getMinutes())}
 			/>
