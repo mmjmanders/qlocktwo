@@ -28,5 +28,5 @@
 	});
 </script>
 
-<Clock {date} config={data.config[language]} />
+<Clock {date} config={data.config[language]} {language} />
 <LanguageSelector bind:language />
