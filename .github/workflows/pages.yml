@@ -16,6 +16,7 @@ jobs:
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
       - run: pnpm install
+      - run: echo "PUBLIC_BUILD_SHA=$(git rev-parse --short HEAD)" | tee -a $GITHUB_ENV
       - run: pnpm build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
