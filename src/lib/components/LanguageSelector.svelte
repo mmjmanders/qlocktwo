@@ -9,7 +9,11 @@
 	{#each languages as lang, i}
 		<!-- svelte-ignore a11y_click_events_have_key_events,a11y_no_static_element_interactions -->
 		<div
-			class="cursor-pointer uppercase {language === lang ? 'opacity-100' : 'opacity-25'}"
+			class="cursor-pointer uppercase {language === lang
+				? 'opacity-100'
+				: 'opacity-25'} {language === lang
+				? 'text-shadow-xs text-shadow-zinc-950 dark:text-shadow-zinc-50'
+				: ''}"
 			onclick={() => (language = Language[lang])}
 		>
 			{lang}
