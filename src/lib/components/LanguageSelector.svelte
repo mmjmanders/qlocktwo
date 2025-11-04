@@ -6,7 +6,7 @@
 </script>
 
 <div class="flex gap-2 font-[Allerta_Stencil] text-zinc-950 dark:text-zinc-50">
-	{#each languages as lang, i}
+	{#each languages as lang, i (lang)}
 		<!-- svelte-ignore a11y_click_events_have_key_events,a11y_no_static_element_interactions -->
 		<div
 			class="cursor-pointer uppercase {language === lang

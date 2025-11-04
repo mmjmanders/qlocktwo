@@ -11,7 +11,7 @@
 
 <div class="relative m-2 flex h-[100vmin] w-[100vmin] items-center justify-center">
 	<div class="grid h-9/10 w-9/10 grid-cols-[repeat(11,_1fr)] grid-rows-[repeat(10,_1fr)]">
-		{#each letters as letter, i}
+		{#each letters as letter, i (i)}
 			<Letter
 				{letter}
 				{language}
@@ -21,7 +21,7 @@
 			/>
 		{/each}
 	</div>
-	{#each dots as _, i}
+	{#each dots as _, i (i)}
 		<Dot index={i} isOn={i < date.getMinutes() % 5} />
 	{/each}
 	<div
