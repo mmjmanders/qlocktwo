@@ -1,0 +1,3 @@
+{
+	"*.{css,html,js,scss,svelte,ts}": "prettier --write"
+}
