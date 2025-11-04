@@ -1,1 +1,4 @@
-// place files you want to import through the `$lib` alias in this folder.
+import { Language, type ClockConfig } from './types';
+import { EnglishConfig, DutchConfig } from './config';
+
+export { Language, type ClockConfig, EnglishConfig, DutchConfig };
