@@ -5,7 +5,7 @@
 <div
 	class="dot-{index} absolute font-['Font_Awesome_7_Free'] text-xxs/4 {isOn
 		? 'opacity-100'
-		: 'opacity-25'} text-zinc-950 dark:text-zinc-50 {isOn
+		: 'opacity-10 dark:opacity-15'} text-zinc-950 dark:text-zinc-50 {isOn
 		? 'text-shadow-xs text-shadow-zinc-950 dark:text-shadow-zinc-50'
 		: ''}"
 >

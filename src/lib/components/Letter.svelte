@@ -12,7 +12,9 @@
 <div
 	class="relative flex items-center justify-center font-[Allerta_Stencil] text-2xl text-zinc-950 uppercase dark:text-zinc-50 index-{index} {language} {isOn
 		? 'opacity-100'
-		: 'opacity-25'} {isOn ? 'text-shadow-xs text-shadow-zinc-950 dark:text-shadow-zinc-50' : ''}"
+		: 'opacity-10 dark:opacity-15'} {isOn
+		? 'text-shadow-xs text-shadow-zinc-950 dark:text-shadow-zinc-50'
+		: ''}"
 >
 	{letter}
 </div>
