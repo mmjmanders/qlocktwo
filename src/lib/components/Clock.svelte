@@ -2,9 +2,8 @@
 	import { type Config, Language } from '$lib';
 	import Dot from './Dot.svelte';
 	import Letter from './Letter.svelte';
-	import { PUBLIC_BUILD_SHA as buildSha } from '$env/static/public';
 
-	let { date, config, language }: { date: Date; config: Config; language: Language } = $props();
+	const { date, config, language }: { date: Date; config: Config; language: Language } = $props();
 	const letters = $derived(config.clock.split(''));
 	const dots = $state(Array(4));
 </script>
@@ -24,9 +23,4 @@
 	{#each dots as _, i (i)}
 		<Dot index={i} isOn={i < date.getMinutes() % 5} />
 	{/each}
-	<div
-		class="absolute bottom-0 flex w-full justify-center font-[Kode_Mono_Variable] text-base text-xs text-zinc-950 dark:text-zinc-50"
-	>
-		{buildSha}
-	</div>
 </div>

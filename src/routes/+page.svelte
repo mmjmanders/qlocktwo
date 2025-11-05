@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { EnglishConfig, DutchConfig, Language, type ClockConfig } from '$lib';
-	import { Clock, LanguageSelector } from '$lib/components';
+	import { Clock, LanguageSelector, Version } from '$lib/components';
+
 	const config: ClockConfig = {
 		en: new EnglishConfig(),
 		nl: new DutchConfig()
@@ -20,3 +21,4 @@
 
 <Clock {date} config={config[language]} {language} />
 <LanguageSelector bind:language />
+<Version />
