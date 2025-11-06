@@ -1,7 +1,7 @@
 {
 	"name": "QLOCKTWO",
 	"short_name": "QLOCKTWO",
-	"start_url": "https://mmjmanders.github.io/qlocktwo/",
+	"start_url": "/qlocktwo/",
 	"icons": [
 		{
 			"src": "/qlocktwo/web-app-manifest-192x192.png",
