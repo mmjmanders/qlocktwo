@@ -4,3 +4,4 @@ onlyBuiltDependencies:
 
 overrides:
   cookie@<0.7.0: '>=0.7.0'
+  js-yaml@>=4.0.0 <4.1.1: '>=4.1.1'
