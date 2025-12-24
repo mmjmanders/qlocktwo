@@ -14,7 +14,7 @@ const config = {
 			precompress: true
 		}),
 		paths: {
-			base: argv.includes('dev') ? '' : env.BASE_PATH
+			base: argv.includes('dev') ? '' : `/${env.REPO_NAME}`
 		}
 	}
 };
