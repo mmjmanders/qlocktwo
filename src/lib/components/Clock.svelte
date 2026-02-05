@@ -8,8 +8,8 @@
 	const dots = $state(Array(4));
 </script>
 
-<div class="relative flex h-[95vmin] w-[95vmin] items-center justify-center">
-	<div class="grid h-9/10 w-9/10 grid-cols-[repeat(11,_1fr)] grid-rows-[repeat(10,_1fr)]">
+<div class="relative flex h-[90vmin] w-[90vmin] items-center justify-center">
+	<div class="grid h-9/10 w-9/10 grid-cols-[repeat(11,1fr)] grid-rows-[repeat(10,1fr)]">
 		{#each letters as letter, i (i)}
 			<Letter
 				{letter}

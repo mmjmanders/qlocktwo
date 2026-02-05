@@ -1,5 +1,18 @@
 @import 'tailwindcss';
 
 @theme {
+	--font-sans: 'Allerta Stencil', sans-serif;
+	--font-mono: 'Kode Mono', monospace;
+	--font-icon: 'Font Awesome 7 Free', sans-serif;
 	--text-xxs: 0.5rem;
+}
+
+@layer base {
+	body {
+		@apply bg-zinc-950 text-zinc-50;
+	}
+
+	main {
+		@apply mx-auto h-[100vmin] w-[100vmin] p-2;
+	}
 }
