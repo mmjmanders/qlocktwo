@@ -3,27 +3,19 @@
 	import '@fontsource/kode-mono';
 	import '@fortawesome/fontawesome-free/css/solid.css';
 	import '../app.css';
-
-	import allertaStencilWoff2 from '@fontsource/allerta-stencil/files/allerta-stencil-latin-400-normal.woff2?url';
-	import kodeMonoWoff2 from '@fontsource/kode-mono/files/kode-mono-latin-400-normal.woff2?url';
-
 	import { pwaInfo } from 'virtual:pwa-info';
 
 	let { children } = $props();
-	const webManifestHref = $derived(pwaInfo?.webManifest?.href || undefined);
+	const manifest = $derived(pwaInfo?.webManifest);
+	const registerSW = $derived(pwaInfo?.registerSW);
 </script>
 
 <svelte:head>
-	<link
-		rel="preload"
-		as="font"
-		type="font/woff2"
-		href={allertaStencilWoff2}
-		crossorigin="anonymous"
-	/>
-	<link rel="preload" as="font" type="font/woff2" href={kodeMonoWoff2} crossorigin="anonymous" />
-	{#if webManifestHref}
-		<link rel="manifest" href={webManifestHref} />
+	{#if manifest}
+		{@html manifest.linkTag}
+	{/if}
+	{#if registerSW}
+		{@html registerSW.scriptTag}
 	{/if}
 </svelte:head>
 
