@@ -13,6 +13,7 @@ export default defineConfig({
 			},
 			strategies: 'generateSW',
 			registerType: 'autoUpdate',
+			injectRegister: 'inline',
 			manifest: {
 				name: 'QLOCKTWO',
 				short_name: 'QLOCKTWO',
