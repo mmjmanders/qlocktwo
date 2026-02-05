@@ -1,5 +1,59 @@
 @import 'tailwindcss';
 
 @theme {
+	--font-sans: 'Allerta Stencil', sans-serif;
+	--font-mono: 'Kode Mono', monospace;
+	--font-icon: 'Font Awesome 7 Free', sans-serif;
 	--text-xxs: 0.5rem;
+}
+
+@layer base {
+	body {
+		@apply bg-zinc-950 text-zinc-50;
+	}
+
+	main {
+		@apply mx-auto h-[100vmin] w-[100vmin] p-2;
+	}
+}
+
+@layer components {
+	.off {
+		@apply opacity-15;
+	}
+
+	.on {
+		@apply opacity-100 text-shadow-xs text-shadow-zinc-50;
+	}
+
+	.language-selector.off {
+		@apply opacity-25;
+	}
+
+	.en.index-104::after {
+		display: block;
+		position: absolute;
+		right: 10%;
+		content: "'";
+	}
+
+	.dot-0 {
+		left: 0;
+		top: 0;
+	}
+
+	.dot-1 {
+		right: 0;
+		top: 0;
+	}
+
+	.dot-2 {
+		right: 0;
+		bottom: 0;
+	}
+
+	.dot-3 {
+		left: 0;
+		bottom: 0;
+	}
 }

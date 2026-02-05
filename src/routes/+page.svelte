@@ -19,6 +19,8 @@
 	});
 </script>
 
-<Clock {date} config={config[language]} {language} />
-<LanguageSelector bind:language />
-<Version />
+<div class="flex flex-col items-center gap-1">
+	<Clock {date} config={config[language]} {language} />
+	<LanguageSelector bind:language />
+	<Version />
+</div>

@@ -8,7 +8,7 @@ export abstract class Config {
 	protected hours: { [key: number]: number[] };
 	protected minutes: { [key: number]: number[] };
 
-	constructor(
+	protected constructor(
 		clock: string,
 		hours: { [key: number]: number[] },
 		minutes: { [key: number]: number[] }

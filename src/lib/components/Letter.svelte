@@ -1,29 +1,24 @@
 <script lang="ts">
-	import type { Language } from '$lib/types';
+	import { Config, type Language } from '$lib/types';
 
 	let {
 		letter,
-		isOn,
+		config,
+		date,
 		language,
 		index
-	}: { letter: string; isOn: boolean; language: Language; index: number } = $props();
+	}: { letter: string; config: Config; date: Date; language: Language; index: number } = $props();
+
+	const style = $derived.by<string>(() =>
+		config.isHourOn(index, date.getHours(), date.getMinutes()) ||
+		config.isMinuteOn(index, date.getMinutes())
+			? 'on'
+			: 'off'
+	);
 </script>
 
 <div
-	class="relative flex items-center justify-center font-[Allerta_Stencil] text-2xl text-zinc-950 uppercase dark:text-zinc-50 index-{index} {language} {isOn
-		? 'opacity-100'
-		: 'opacity-10 dark:opacity-15'} {isOn
-		? 'text-shadow-xs text-shadow-zinc-950 dark:text-shadow-zinc-50'
-		: ''}"
+	class="relative flex items-center justify-center text-2xl uppercase index-{index} {language} {style}"
 >
 	{letter}
 </div>
-
-<style>
-	.en.index-104::after {
-		display: block;
-		position: absolute;
-		right: 10%;
-		content: "'";
-	}
-</style>
