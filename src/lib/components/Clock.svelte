@@ -11,13 +11,7 @@
 <div class="relative flex h-[90vmin] w-[90vmin] items-center justify-center">
 	<div class="grid h-9/10 w-9/10 grid-cols-[repeat(11,1fr)] grid-rows-[repeat(10,1fr)]">
 		{#each letters as letter, i (i)}
-			<Letter
-				{letter}
-				{language}
-				index={i}
-				isOn={config.isHourOn(i, date.getHours(), date.getMinutes()) ||
-					config.isMinuteOn(i, date.getMinutes())}
-			/>
+			<Letter {letter} {language} index={i} {config} {date} />
 		{/each}
 	</div>
 	{#each dots as _, i (i)}
