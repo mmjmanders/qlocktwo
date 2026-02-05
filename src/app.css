@@ -16,3 +16,13 @@
 		@apply mx-auto h-[100vmin] w-[100vmin] p-2;
 	}
 }
+
+@layer components {
+	.off {
+		@apply opacity-15;
+	}
+
+	.on {
+		@apply opacity-100 text-shadow-xs text-shadow-zinc-50;
+	}
+}

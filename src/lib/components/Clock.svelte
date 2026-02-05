@@ -21,6 +21,6 @@
 		{/each}
 	</div>
 	{#each dots as _, i (i)}
-		<Dot index={i} isOn={i < date.getMinutes() % 5} />
+		<Dot index={i} {date} />
 	{/each}
 </div>
