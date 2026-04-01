@@ -5,3 +5,8 @@ onlyBuiltDependencies:
 overrides:
   cookie@<0.7.0: '>=0.7.0'
   js-yaml@>=4.0.0 <4.1.1: '>=4.1.1'
+  picomatch@>=4.0.0 <4.0.4: '>=4.0.4'
+  rollup@>=4.0.0 <4.59.0: '>=4.59.0'
+  serialize-javascript@<7.0.5: '>=7.0.5'
+  serialize-javascript@<=7.0.2: '>=7.0.3'
+  yaml@>=2.0.0 <2.8.3: '>=2.8.3'
